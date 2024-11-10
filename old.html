@@ -1,0 +1,427 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikeWorld</title>
+    <style>
+        /* Styling for the parent grid layout */
+        .parent {
+            margin-top: 5%;
+            width: 100%;
+            display: grid;
+            grid-template-columns:auto auto auto;
+            gap: 20px;
+            text-align: center;
+           
+        }
+
+        /* Card styling */
+        .card {
+            height: 72vh;
+            width: 30vw;
+            border: 2px solid blue;
+            border-radius: 2%;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+
+        .img1 {
+            border-radius: 1.9%;
+            height: 46vh;
+            width: 30vw;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+            border-radius: 10px;
+            transition: transform 2.2s ease-out;
+        }
+
+
+        .img1:hover {
+            transform: scale(0.8); 
+        }
+
+        .model {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(95, 151, 160);
+            text-shadow: 1px 1px 1px rgb(153, 51, 153);
+        }
+
+   
+        .price {
+            color: blue;
+        }
+
+        .addcart {
+            color: red;
+            background: lightblue;
+            box-shadow: 0 8px 32px 0 rgba(133, 31, 135, 0.37);
+            backdrop-filter: blur(3.5px);
+            -webkit-backdrop-filter: blur(3.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+
+        .navbar {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000; 
+            padding: 1rem 2rem;
+            font-family: Arial, sans-serif;
+
+
+
+
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            color: red;
+            font-weight: bold;
+        }
+
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar .nav-links a {
+            color: #fff; 
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+
+            color: blueviolet;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #f39c12; 
+        }
+        .whitelist{
+            margin-left: 2%;
+            color: red;
+            background: lightblue;
+            box-shadow: 0 8px 32px 0 rgba(133, 31, 135, 0.37);
+            backdrop-filter: blur(3.5px);
+            -webkit-backdrop-filter: blur(3.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .sort{
+            margin-top: 5%;
+            height:7vh;
+            width: 100%;
+            border: 2px solid blue;
+            position: fixed;
+            bottom: 0px;
+
+
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            justify-content: center;
+            gap: 2%;
+        }
+        .sortlist1,.sortlist2{
+            font-size: 2.5vh;
+            text-align: center;
+            color: #f31212;
+            width: 25vw;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+        }
+
+        
+    .fashion{
+        display: flex;
+        gap: 2%;
+    }
+    .card1,.card2,.card3{
+        margin-top: 2%;
+        height: 37vh;
+        width: auto;
+        text-align: justify;
+        border:  2px solid blue;
+        text-align: center;
+      
+
+        background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(135, 36, 31, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+
+    }
+    .about>h1,.products>h1{
+
+        background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(55, 135, 31, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+
+    @media screen and (width<576px) {
+        .card{
+            height: 50vh;
+            width: 40vw;
+        }
+       .parent{
+           display: grid;
+           justify-content: center;
+           grid-template-columns:auto auto ; 
+           width: auto;
+          
+           
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column
+        }
+        .model {
+            font-size: 0.1em;
+    
+        }
+        .addcart{
+            height: auto;
+        }
+        .whitelist{
+            height: auto;
+        }
+
+        .img1 {
+            border-radius: 1.9%;
+            height: 30vh;
+            width: 30vw;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+            border-radius: 10px;
+            transition: transform 2.2s ease-out;
+        }
+
+        .fashion{
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+    }
+    .card1,.card2,.card3{
+        margin-top: 2%;
+        height: 40vh;
+        width: auto;
+        
+        border:  2px solid rgb(0, 255, 0);
+        
+      
+
+        background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(135, 36, 31, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+
+    }
+    .products{
+        margin-top: 9%;
+    }
+
+    }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">NikeWorld</div>
+        <div class="nav-links" >
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            
+        </div>
+    </nav>
+
+    <div class="home" id="home">
+
+    </div>
+
+    <div class="about" id="about">
+<h1 style="text-align: center;">About Us</h1>
+        <p>At Nike, we believe in creating footwear that empowers everyone to push beyond their limits. Whether you’re an athlete, a casual runner, or just someone who appreciates style and comfort, our wide range of shoes is designed to meet your needs.
+        
+        </p>
+
+        <div class="fashion">
+      <div class="card1">
+        <h3>Mens Shoes</h3>
+        <p>Our men's collection offers cutting-edge performance technology, sleek designs, and unmatched comfort. From running shoes engineered for endurance to basketball shoes built for agility and support, Nike ensures that every man is equipped to conquer his sport or daily routine in style.</p></div>
+
+      <div class="card2">
+        <h3>Women's Shoes</h3>
+        <p>Designed with both performance and aesthetics in mind, our women's shoes cater to athletes and trendsetters alike. Whether you're looking for high-performance running shoes, training sneakers, or stylish everyday footwear, Nike has you covered with the perfect blend of function and fashion.</p></div>
+      <div class="card3">
+        <h3>Kids Shoes</h3>
+        <p>For the next generation of athletes and adventurers, Nike offers a versatile range of kids' shoes that combine durability, comfort, and fun designs. From schoolyard play to organized sports, our kids' collection supports every leap, sprint, and step they take.</p></div>
+    </div>
+
+    </div>
+
+    <div class="products" id="products">
+        <h1 style="text-align: center;margin-top: 5%;">Products</h1>
+    </div>
+
+
+
+
+
+    <script>
+        var emp=[]
+        var emp1=[]
+
+        var parent = document.createElement("div");
+        parent.setAttribute("class", "parent");
+        document.body.appendChild(parent);
+
+        var twobuttons= document.createElement("div");
+        twobuttons.setAttribute("class", "sort");
+        document.body.appendChild(twobuttons);
+
+        var sortlist1= document.createElement("button");
+        sortlist1.innerHTML="saved for later"
+        sortlist1.setAttribute("class", "sortlist1");
+        twobuttons.appendChild(sortlist1);
+
+        var sortlist2= document.createElement("button");
+        sortlist2.innerHTML="cart"
+        sortlist2.setAttribute("class", "sortlist1");
+        twobuttons.appendChild(sortlist2);
+
+
+
+        async function hello() {
+            try {
+                var a = await fetch("https://run.mocky.io/v3/3b983d56-dc97-4947-b449-2421880d1827");
+                var b = await a.json();
+               var c=b.data
+
+
+                c.map(function(val) {
+                    var card = document.createElement("div");
+                    card.setAttribute("class", "card");
+                    parent.appendChild(card);
+
+                    var img1 = document.createElement("img");
+                    img1.src = val.image;
+                    img1.setAttribute("class", "img1");
+                    card.appendChild(img1);
+
+
+                    var model = document.createElement("h5");
+                    model.innerHTML = val.model;
+                    model.setAttribute("class", "model");
+                    card.appendChild(model);
+
+
+                    var price = document.createElement("h5");
+                    price.innerHTML = val.price;
+                    price.setAttribute("class", "price");
+                    card.appendChild(price);
+
+
+                    var addcart = document.createElement("button");
+                    addcart.innerHTML = "Add to Cart";
+                    addcart.setAttribute("class", "addcart");
+                    card.appendChild(addcart);
+
+                    var whitelist= document.createElement("button");
+                    whitelist.innerHTML = "Save for later";
+                    whitelist.setAttribute("class", "whitelist");
+                    card.appendChild(whitelist);
+
+
+                    whitelist.addEventListener("click", () => {
+                        alert("Item successfully saved for later!");
+                        console.log(val);
+                        emp.push(val);
+                        localStorage.setItem("whitelist",JSON.stringify(emp))
+
+                    });
+
+                    addcart.addEventListener("click", () => {
+                        alert("Item successfully added to the cart!");
+                        console.log(val);
+                        emp1.push(val);
+                        localStorage.setItem("cart",JSON.stringify(emp1))
+
+                    });
+
+                    sortlist1.addEventListener("click",()=>{
+                     window.open("whitelist.html","_self")
+                    })
+
+                    sortlist2.addEventListener("click",()=>{
+                     window.open("addtocart.html","_self")
+                    })
+
+
+
+
+
+                });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        hello();
+    </script>
+
+
+
+
+</body>
+</html> -->

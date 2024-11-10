@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    color: black;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: white;
+}
+
+.navbar .logo h1 {
+    /* font-size: 1.5rem; */
+    color: black;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+        .card2 {
+            height: auto;
+            width: auto;
+            border: 2px solid blue;
+            border-radius: 2%;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .parent1 {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .card3 {
+            margin-top: 5%;
+            height: 20vh;
+            width: 60vw;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .img2 {
+            height: 100%;
+            width: auto;
+            max-width: 20%;
+            border-radius: 5px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 60%;
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .totalitems {
+            position: fixed;
+            top: 20%;
+            height: auto;
+            width: 30vw;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            row-gap: 25%;
+        }
+
+        .sendtocart {
+            height: 10vh;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+
+        .item-count-display {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (width<576px) {
+        .parent1 {
+            display: flex;
+            flex-direction: column
+
+
+        }
+
+        .card3 {
+            margin-top: 27%;
+            height: auto;
+            width: 40vw;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-size: 6px;
+            text-size-adjust: auto;
+        }
+
+        .img2 {
+            height: 10vh;
+            width:40vw;
+        }
+
+        .totalitems{
+
+
+            height: auto;
+            width: 30vw;
+            text-wrap: wrap;
+        }
+        .para{
+            font-size: 2vh;
+        }
+        
+
+
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Nike Shoe Store</h1>
+        </div>
+        <h1>YOUR LISTS</h1>
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="#orders">Orders</a></li>
+            <li><a href="whitelist.html"><img src="icons8-love-24.png" alt="Whitelist Icon"></a></li>
+            <li><a href="addtocart.html"><img src="icons8-cart-50.png" alt="Cart Icon"></a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</div>
+    <script>
+        var emp1=[]
+        var output = localStorage.getItem("whitelist");
+        var disp = JSON.parse(output);
+        // console.log(disp);
+
+        var parent1 = document.createElement("div");
+        parent1.setAttribute("class", "parent1");
+        document.body.appendChild(parent1);
+
+        var totalitems = document.createElement("div");
+        totalitems.setAttribute("class", "totalitems");
+
+ 
+        var itemCountDisplay = document.createElement("div");
+        itemCountDisplay.setAttribute("class", "item-count-display");
+        itemCountDisplay.innerHTML = "Total Items: 0";
+        totalitems.appendChild(itemCountDisplay);
+
+        document.body.appendChild(totalitems);
+
+        var sendtocart = document.createElement("button");
+        sendtocart.setAttribute("class", "sendtocart");
+        sendtocart.innerHTML = "Send Items to Cart";
+        totalitems.appendChild(sendtocart);
+
+        
+        var para= document.createElement("p");
+        para.style.color="lightseagreen"
+        totalitems.appendChild(para);
+        
+    
+
+
+
+
+        let totalItemCount = 0;
+        disp.map(function(val) {
+            // console.log(val);
+
+            var card3 = document.createElement("div");
+            card3.setAttribute("class", "card3");
+            parent1.appendChild(card3);
+
+            var img2 = document.createElement("img");
+            img2.src = val.image;
+            img2.setAttribute("class", "img2");
+            card3.appendChild(img2);
+
+            var info = document.createElement("div");
+            info.setAttribute("class", "info");
+            card3.appendChild(info);
+
+            var model1 = document.createElement("h4");
+            model1.innerHTML = val.model + "-";
+            info.appendChild(model1);
+
+            var price1 = document.createElement("h4");
+            price1.innerHTML = "Price: " + val.price;
+            price1.style.color = "red";
+            info.appendChild(price1);
+
+            var btns = document.createElement("div");
+            btns.setAttribute("class", "btns");
+            card3.appendChild(btns);
+
+            var minus = document.createElement("button");
+            minus.innerHTML = "-";
+            btns.appendChild(minus);
+
+            var countDisplay = document.createElement("button");
+            countDisplay.innerHTML = "0";  
+            btns.appendChild(countDisplay);
+
+            var plus = document.createElement("button");
+            plus.innerHTML = "+";
+            btns.appendChild(plus);
+
+            var count = 0;
+
+            function updateTotalBill() {
+           
+                itemCountDisplay.innerHTML = "Total items: " + totalItemCount;
+            }
+
+            plus.addEventListener("click", () => {
+                count++;
+                countDisplay.innerHTML = count;
+
+                totalItemCount++;
+                updateTotalBill();
+                console.log(val)
+
+    
+            // alert("Item successfully added to the cart!");
+            // console.log(val);
+            emp1.push(val);
+           var plusres= localStorage.setItem("cart",JSON.stringify(emp1))
+
+            });
+
+            minus.addEventListener("click", () => {
+                if (count > 0) {
+                    count--;
+                    countDisplay.innerHTML = count;
+
+                    totalItemCount--;
+                    updateTotalBill();
+                    const index = emp1.indexOf(val);
+if (index > -1) emp1.splice(index, 1);
+localStorage.setItem("cart", JSON.stringify(emp1));
+
+                }
+            });
+
+            sendtocart.addEventListener("click", () => {
+            para.innerHTML=  totalItemCount+"Items are added to the cart succesfully"
+            setTimeout(() => {
+            para.innerHTML = "";  
+            }, 3000);
+          
+            });
+
+        });
+    </script>
+</body>
+</html>
