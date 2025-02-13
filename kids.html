@@ -220,12 +220,13 @@
                 var emp1=[]
         async function hello() {
             try {
-                const response = await fetch("https://run.mocky.io/v3/3b983d56-dc97-4947-b449-2421880d1827");
+                const response = await fetch("https://node-assignments-23.onrender.com/");
                 const data = await response.json();
-                const items = data.data;
+                // console.log(data)
+                // const items = data.data;
 
                 // Filter items by "mens shoes" category
-                const mensShoes = items.filter(item => item.category === "kids shoes");
+                const mensShoes = data.filter(item => item.category === "kids shoes");
 
                 // Display items in cards
                 const cardContainer = document.getElementById("card-container");
