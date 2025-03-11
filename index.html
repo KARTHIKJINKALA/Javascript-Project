@@ -300,14 +300,14 @@
 
         function searchFunction() {
             var inp = document.getElementById("inp1").value.toLowerCase();
-            if (inp === "mens shoes") {
+            if (inp === "mens shoes" || inp === "mens" || inp === "men") {
                 window.open("mens.html", "_self");
-            } else if (inp === "womens shoes") {
+            } else if (inp === "womens shoes" || inp === "womens" || inp === "women") {
                 window.open("women.html", "_self");
-            } else if (inp === "kids shoes") {
+            } else if (inp === "kids shoes"  || inp === "kid" || inp === "kids") {
                 window.open("kids.html", "_self");
             } else {
-                alert("Please enter 'mens shoe', 'womens shoes', or 'kids shoes'");
+                alert("Please enter something'");
             }
         }
     </script>
